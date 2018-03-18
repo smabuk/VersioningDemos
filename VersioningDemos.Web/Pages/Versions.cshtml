@@ -4,7 +4,7 @@
     ViewData["Title"] = "Versions";
 }
 
-<h2>Versions</h2>
+<h2>My Assemblies</h2>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -18,12 +18,36 @@
     <tbody>
         @foreach (var ai in Model.Assemblies.OrderBy(a => a.Name))
         {
+            <tr>
+                <td>@ai.Name</td>
+                <td>@ai.AssemblyVersion</td>
+                <td>@ai.FileVersion</td>
+                <td>@ai.ProductVersion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Microsoft Assemblies</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
         <tr>
-            <td>@ai.Name</td>
-            <td>@ai.AssemblyVersion</td>
-            <td>@ai.FileVersion</td>
-            <td>@ai.ProductVersion</td>
+            <td>Name</td>
+            <td>Assembly version</td>
+            <td>File version</td>
+            <td>Product version</td>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var ai in Model.MicrosoftAssemblies.OrderBy(a => a.Name))
+        {
+            <tr>
+                <td>@ai.Name</td>
+                <td>@ai.AssemblyVersion</td>
+                <td>@ai.FileVersion</td>
+                <td>@ai.ProductVersion</td>
+            </tr>
         }
     </tbody>
 </table>
