@@ -16,4 +16,9 @@
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Default\Default.vbproj" />
+    <ProjectReference Include="..\Manual\Manual.vbproj" />
+  </ItemGroup>
+
 </Project>
