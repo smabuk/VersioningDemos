@@ -5,6 +5,8 @@ There are 3 versions generally referenced within a .NET Core assembly
 * File Version - this is used to see which DLL is later.
     It has the pattern x.x.x.x usually considered to be Major.Minor.Build.Revision
 * Product Version - also known as the InformationalVersion within the assembly. This is a freeform text version that is used for descriptive purposes.
+    * Currently the format of this follows the Semantic Versioning pattern.
+    * You can read more at [semver.org](https://semver.org/)
 * Assembly Version - the version of the assembly
 
 ## Projects
@@ -15,7 +17,10 @@ that used AssemblyInfo.cs or project.json
 2. Manual (Version)
   - Using Visual Studio UI
   - Editing `<project>.csproj` 
-3. VersionPrefix
-4. VersionSuffix
-5. MSBuild
-6. VSTS pipeline
+3. Manual.AllDifferent
+  - Using Visual Studio UI
+  - Editing `<project>.csproj` 
+4. VersionPrefix
+5. VersionSuffix
+6. MSBuild
+7. VSTS pipeline
