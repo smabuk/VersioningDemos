@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace VersioningDemos.Web.Pages
 {
-    public class VersionsModel : PageModel
+    public class IndexModel : PageModel
     {
         public class AssemblyInfo
         {
@@ -62,6 +62,7 @@ namespace VersioningDemos.Web.Pages
 
                 if (item.GetName().Name.StartsWith("Microsoft.")
                    || item.GetName().Name.StartsWith("Newtonsoft.")
+                   || item.GetName().Name.StartsWith("ProductionBreakpoints")  // Application Insights
                    || item.GetName().Name.StartsWith("System.")
                    || item.GetName().Name.StartsWith("dotnet")
                    || item.GetName().Name.StartsWith("netstandard")
