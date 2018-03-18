@@ -26,6 +26,7 @@ namespace VersioningDemos.Web.Pages
             // If we don't do anything with the other assemblies anywhere they won't show up here
             var p1 = new Default.Class1();
             var p2 = new Manual.Class1();
+            var p3 = new Manual.AllDifferent.Class1();
 
             var assemblies = from a in AppDomain.
                 CurrentDomain.

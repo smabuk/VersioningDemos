@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Manual.AllDifferent</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.1</Version>
+    <FileVersion>3.3.3.3</FileVersion>
+    <AssemblyVersion>2.2.2.2</AssemblyVersion>
+  </PropertyGroup>
+
+</Project>

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Default\Default.vbproj" />
+    <ProjectReference Include="..\Manual.AllDifferent\Manual.AllDifferent.vbproj" />
     <ProjectReference Include="..\Manual\Manual.vbproj" />
   </ItemGroup>
 
