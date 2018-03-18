@@ -39,46 +39,41 @@ namespace VersioningDemos.Web.Pages
             {
                 var ai = new AssemblyInfo();
 
-                try
+                ai.Name = item.GetName().Name;
+                ai.AssemblyVersion = item.GetName().Version.ToString();
+                foreach (var ca in item.CustomAttributes.Where(ca => ca.AttributeType.ToString().StartsWith("System.Reflection.Assembly")))
                 {
-                    ai.Name = item.GetName().Name;
-                    ai.Location =item.Location;
-                    ai.AssemblyVersion = item.GetName().Version.ToString();
-                    foreach (var ca in item.CustomAttributes.Where(ca => ca.AttributeType.ToString().StartsWith("System.Reflection.Assembly")))
+                    switch (ca.AttributeType.ToString().Replace("System.Reflection.Assembly", "").Replace("Attribute", ""))
                     {
-                        switch (ca.AttributeType.ToString().Replace("System.Reflection.Assembly", "").Replace("Attribute", ""))
-                        {
-                            case "FileVersion":
-                                ai.FileVersion = ca.ConstructorArguments[0].Value.ToString();
-                                break;
-                            case "InformationalVersion":
-                                ai.ProductVersion = ca.ConstructorArguments[0].Value.ToString();
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-
-                    if (  item.GetName().Name.StartsWith("Microsoft.")
-                       || item.GetName().Name.StartsWith("Newtonsoft.")
-                       || item.GetName().Name.StartsWith("System.")
-                       || item.GetName().Name.StartsWith("dotnet")
-                       || item.GetName().Name.StartsWith("netstandard")
-                       )
-                    {
-                        MicrosoftAssemblies.Add(ai);
-                    } else
-                    {
-                        Assemblies.Add(ai);
+                        case "FileVersion":
+                            ai.FileVersion = ca.ConstructorArguments[0].Value.ToString();
+                            break;
+                        case "InformationalVersion":
+                            ai.ProductVersion = ca.ConstructorArguments[0].Value.ToString();
+                            break;
+                        default:
+                            break;
                     }
                 }
-                catch (Exception)
+                if (!item.IsDynamic)
                 {
+                    ai.Location = item.Location;
                 }
 
+                if (item.GetName().Name.StartsWith("Microsoft.")
+                   || item.GetName().Name.StartsWith("Newtonsoft.")
+                   || item.GetName().Name.StartsWith("System.")
+                   || item.GetName().Name.StartsWith("dotnet")
+                   || item.GetName().Name.StartsWith("netstandard")
+                   )
+                {
+                    MicrosoftAssemblies.Add(ai);
+                }
+                else
+                {
+                    Assemblies.Add(ai);
+                }
             }
-
-
         }
     }
 }
