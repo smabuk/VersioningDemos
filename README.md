@@ -1,6 +1,14 @@
-# VersioningDemos
+# Versioning Demos
 Examples of ways to version .NET Core projects both without and with CI/CD
 
-* 01 Manual update
-* 02 Prefix
+There are 3 versions generally referenced within a .NET Core assembly
+* File Version - this is used to see which DLL is later.
+    It has the pattern x.x.x.x usually considered to be Major.Minor.Build.Revision
+* Product Version - also known as the InformationalVersion within the assembly. This is a freeform text version that is used for descriptive purposes.
+* Assembly Version - the version of the assembly
+
+# Projects
+* 01 Default
+* 02 Manual
+* 03 Prefix
 
