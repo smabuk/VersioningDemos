@@ -38,8 +38,20 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2018 Simon Brookes</p>
+        <footer class="row">
+            <div class="col-sm-3 pull-left">
+                <p>&copy; 2018 Simon Brookes</p>
+            </div>
+            <div class="col-sm-2 text-right pull-right">
+            @{ 
+                string siteVersion = typeof(Program)
+                    .GetTypeInfo()
+                    .Assembly
+                    .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                    .InformationalVersion;
+            }
+            Site version: @siteVersion
+            </div>
         </footer>
     </div>
 
