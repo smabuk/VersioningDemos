@@ -1,0 +1,29 @@
+﻿@page
+@model VersioningDemos.Web.Pages.VersionsModel
+@{
+    ViewData["Title"] = "Versions";
+}
+
+<h2>Versions</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Assembly version</td>
+            <td>File version</td>
+            <td>Product version</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ai in Model.Assemblies.OrderBy(a => a.Name))
+        {
+        <tr>
+            <td>@ai.Name</td>
+            <td>@ai.AssemblyVersion</td>
+            <td>@ai.FileVersion</td>
+            <td>@ai.ProductVersion</td>
+        </tr>
+        }
+    </tbody>
+</table>
