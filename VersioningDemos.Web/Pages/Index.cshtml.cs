@@ -31,6 +31,7 @@ namespace VersioningDemos.Web.Pages
             p1 = new VersionPrefix.Class1();
             p1 = new VersionSuffix.Class1();
             p1 = new SemanticVersioning.Class1();
+            p1 = new BuildRevision.Class1();
 
             var assemblies = from a in AppDomain.
                 CurrentDomain.
