@@ -1,0 +1,34 @@
+﻿@page
+@using System.Reflection
+@{
+    ViewData["Title"] = "Razor Version Page";
+}
+
+<h2>Razor Version Page</h2>
+
+
+
+<dl>
+    <dt>Expected version</dt>
+    <dd>2.0.0-[builddata]</dd>
+</dl>
+<dl>
+    <dt>
+        <code>
+            GetType().Assembly.GetName().Version.ToString()
+        </code>
+    </dt>
+    <dd>
+        @{ string ver1 = GetType().Assembly.GetName().Version.ToString(); }
+        @ver1
+    </dd>
+    <dt>
+        <code>
+            typeof(Program).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion
+        </code>
+    </dt>
+    <dd>
+        @{ string verProgram = typeof(Program).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion; }
+        @verProgram
+    </dd>
+</dl>

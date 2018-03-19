@@ -25,17 +25,16 @@ namespace VersioningDemos.Web.Pages
         {
             // If we don't do anything with the other assemblies anywhere they won't show up here
             object p1 = new Default.Class1();
-
-            p1 = new Manual.Class1();
-            p1 = new Manual.AllDifferent.Class1();
-            p1 = new VersionPrefix.Class1();
-            p1 = new VersionSuffix.Class1();
-            p1 = new SemanticVersioning.Class1();
             p1 = new BuildDateTime.Class1();
             p1 = new BuildRevision.Class1();
+            p1 = new EnvironmentVariable.Class1();
+            p1 = new Manual.Class1();
+            p1 = new Manual.AllDifferent.Class1();
+            p1 = new SemanticVersioning.Class1();
+            p1 = new VersionPrefix.Class1();
+            p1 = new VersionSuffix.Class1();
             p1 = new VSTS.Class1();
             p1 = new VSTS.WithGit.Class1();
-            p1 = new EnvironmentVariable.Class1();
 
             var assemblies = from a in AppDomain.
                 CurrentDomain.

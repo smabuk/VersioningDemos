@@ -22,7 +22,7 @@ namespace VersioningDemos.Web.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult MVCVersionPage()
         {
             ViewData["Message"] = "Your contact page.";
 
