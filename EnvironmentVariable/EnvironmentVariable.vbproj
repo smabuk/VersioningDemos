@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>EnvironmentVariable</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <VersionPrefix>2.0.0</VersionPrefix>
+    <VersionSuffix>built-on-$(ComputerName)</VersionSuffix>
+  </PropertyGroup>
+
+</Project>
