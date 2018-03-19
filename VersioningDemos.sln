@@ -22,6 +22,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionPrefix", "VersionPre
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionSuffix", "VersionSuffix\VersionSuffix.vbproj", "{011D147F-A09A-49F3-90E3-209C0BAFE431}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SemanticVersioning", "SemanticVersioning\SemanticVersioning.vbproj", "{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{011D147F-A09A-49F3-90E3-209C0BAFE431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011D147F-A09A-49F3-90E3-209C0BAFE431}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011D147F-A09A-49F3-90E3-209C0BAFE431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

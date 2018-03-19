@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Default\Default.vbproj" />
     <ProjectReference Include="..\Manual.AllDifferent\Manual.AllDifferent.vbproj" />
     <ProjectReference Include="..\Manual\Manual.vbproj" />
+    <ProjectReference Include="..\SemanticVersioning\SemanticVersioning.vbproj" />
     <ProjectReference Include="..\VersionPrefix\VersionPrefix.vbproj" />
     <ProjectReference Include="..\VersionSuffix\VersionSuffix.vbproj" />
   </ItemGroup>
