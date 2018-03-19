@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BuildDateTime\BuildDateTime.vbproj" />
     <ProjectReference Include="..\BuildRevision\BuildRevision.vbproj" />
     <ProjectReference Include="..\Default\Default.vbproj" />
     <ProjectReference Include="..\Manual.AllDifferent\Manual.AllDifferent.vbproj" />

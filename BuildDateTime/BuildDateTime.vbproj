@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>BuildDateTime</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <MajorVersion>2</MajorVersion>
+    <MinorVersion>3</MinorVersion>
+    <Year>$([System.DateTime]::get_Now().get_Year())</Year>
+    <Month>$([System.DateTime]::get_Now().get_Month())</Month>
+    <Day>$([System.DateTime]::get_Now().get_Day().ToString("D2"))</Day>
+    <Time>$([System.DateTime]::get_Now().get_Hour())$([System.DateTime]::get_Now().get_Minute().ToString("D2"))</Time>
+    <Version>$(MajorVersion).$(Year).$(Month)$(Day).$(Time)</Version>
+  </PropertyGroup>
+
+</Project>
