@@ -25,6 +25,8 @@
     <ProjectReference Include="..\SemanticVersioning\SemanticVersioning.vbproj" />
     <ProjectReference Include="..\VersionPrefix\VersionPrefix.vbproj" />
     <ProjectReference Include="..\VersionSuffix\VersionSuffix.vbproj" />
+    <ProjectReference Include="..\VSTS.WithGit\VSTS.WithGit.vbproj" />
+    <ProjectReference Include="..\VSTS\VSTS.vbproj" />
   </ItemGroup>
 
 </Project>

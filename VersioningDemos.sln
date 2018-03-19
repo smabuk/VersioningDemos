@@ -26,6 +26,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SemanticVersioning", "Seman
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildRevision", "BuildRevision\BuildRevision.vbproj", "{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VSTS", "VSTS\VSTS.vbproj", "{AC898FAD-0955-4E5D-9A4E-451DA6E89047}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VSTS.WithGit", "VSTS.WithGit\VSTS.WithGit.vbproj", "{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +68,14 @@ Global
 		{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC898FAD-0955-4E5D-9A4E-451DA6E89047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC898FAD-0955-4E5D-9A4E-451DA6E89047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC898FAD-0955-4E5D-9A4E-451DA6E89047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC898FAD-0955-4E5D-9A4E-451DA6E89047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
