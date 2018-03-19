@@ -23,5 +23,12 @@ that used AssemblyInfo.cs or project.json
   - Editing `<project>.csproj` 
 4. VersionPrefix
 5. VersionSuffix
-6. MSBuild
-7. VSTS pipeline
+6. BuildRevision
+  -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
+  -  Uses calculations in the csproj file
+7. BuildDateTime
+  - used x.YYYY.MDD.HHMM to create automated values
+8. VSTS
+  - Add configured BUILDNUMBER from VSTS to VersionSuffix
+9. VSTS.WithGit
+  - Add Git branch to Version Suffix as well
