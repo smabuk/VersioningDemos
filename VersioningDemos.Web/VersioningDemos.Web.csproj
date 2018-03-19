@@ -22,6 +22,7 @@
     <ProjectReference Include="..\Manual.AllDifferent\Manual.AllDifferent.vbproj" />
     <ProjectReference Include="..\Manual\Manual.vbproj" />
     <ProjectReference Include="..\VersionPrefix\VersionPrefix.vbproj" />
+    <ProjectReference Include="..\VersionSuffix\VersionSuffix.vbproj" />
   </ItemGroup>
 
 </Project>
