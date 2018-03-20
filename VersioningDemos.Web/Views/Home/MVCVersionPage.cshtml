@@ -5,28 +5,76 @@
 
 <h2>MVC Version Page</h2>
 
-
+<h3>Expected Result</h3>
 <dl>
-    <dt>Expected version</dt>
-    <dd>2.0.0-[builddata]</dd>
+    <dt>AsssemblyName: version</dt>
+    <dd>VersioningDemos.Web: 2.0.0-[builddata]</dd>
 </dl>
+
+<h3>Incorrect assumption</h3>
 <dl>
     <dt>
+        Assembly version
         <code>
             GetType().Assembly.GetName().Version.ToString()
         </code>
     </dt>
     <dd>
-        @{ string ver1 = GetType().Assembly.GetName().Version.ToString(); }
-        @ver1
+        @{ string verAssembly = GetType().Assembly.GetName().Version.ToString(); }
+        @GetType().Assembly.GetName().Name: @verAssembly
     </dd>
     <dt>
+        File version
         <code>
-            typeof(Program).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion
+            GetType().GetTypeInfo().Assembly.GetCustomAttribute&lt;AssemblyFileVersionAttribute&gt;().Version
+        </code>
+    </dt>
+    <dd>
+        @{
+            string verFile = "";
+            try
+            {
+                verFile = GetType().GetTypeInfo().Assembly.GetCustomAttribute<AssemblyFileVersionAttribute>().Version;
+            }
+            catch (Exception)
+            {
+                verFile = "No value (causes an exception)";
+            }
+        }
+        @GetType().GetTypeInfo().Assembly.GetName().Name: @verFile
+    </dd>
+    <dt>
+        Product version
+        <code>
+            GetType().Assembly.GetCustomAttribute&lt;AssemblyInformationalVersionAttribute&gt;().InformationalVersion
+        </code>
+    </dt>
+    <dd>
+        @{
+            string verProduct = "";
+            try
+            {
+                verProduct = GetType().GetTypeInfo().Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+            }
+            catch (Exception)
+            {
+                verProduct = "No value (causes an exception)";
+            }
+        }
+        @GetType().GetTypeInfo().Assembly.GetName().Name: @verProduct
+    </dd>
+</dl>
+
+<h3>Correct Result</h3>
+<dl>
+    <dt>
+        using Program class
+        <code>
+            typeof(Program).GetTypeInfo().Assembly.GetCustomAttribute&lt;AssemblyInformationalVersionAttribute&gt;().InformationalVersion
         </code>
     </dt>
     <dd>
         @{ string verProgram = typeof(Program).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion; }
-        @verProgram
+        @typeof(Program).GetTypeInfo().Assembly.GetName().Name: @verProgram
     </dd>
 </dl>

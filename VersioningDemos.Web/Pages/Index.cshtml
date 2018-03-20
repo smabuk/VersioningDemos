@@ -28,6 +28,35 @@
     </tbody>
 </table>
 
+<h2>Unexpected Assemblies</h2>
+<p>
+    These are the assemblies that cause unexpected side effects when checking current version.
+    When compiled in debug mode pages are compiled into individual assemblies.
+    When compiled for release a <code>PrecompiledViews</code> assembly is created.
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Assembly version</td>
+            <td>File version</td>
+            <td>Product version</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ai in Model.UnexpectedAssemblies.OrderBy(a => a.Name))
+        {
+            <tr>
+                <td>@ai.Name</td>
+                <td>@ai.AssemblyVersion</td>
+                <td>@ai.FileVersion</td>
+                <td>@ai.ProductVersion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <h2>Microsoft Assemblies</h2>
 
 <table class="table table-bordered table-striped">

@@ -20,6 +20,7 @@ namespace VersioningDemos.Web.Pages
 
         public List<AssemblyInfo> Assemblies { get; set; } = new List<AssemblyInfo>();
         public List<AssemblyInfo> MicrosoftAssemblies { get; set; } = new List<AssemblyInfo>();
+        public List<AssemblyInfo> UnexpectedAssemblies { get; set; } = new List<AssemblyInfo>();
 
         public void OnGet()
         {
@@ -77,6 +78,12 @@ namespace VersioningDemos.Web.Pages
                    )
                 {
                     MicrosoftAssemblies.Add(ai);
+                }
+                else if ( item.GetName().Name.Contains("PrecompiledViews")
+                    || item.GetName().Name.Contains("Anonymously Hosted")
+                    || item.GetName().Name.Substring(0,1).ToLowerInvariant() == item.GetName().Name.Substring(0, 1))
+                {
+                    UnexpectedAssemblies.Add(ai);
                 }
                 else
                 {
