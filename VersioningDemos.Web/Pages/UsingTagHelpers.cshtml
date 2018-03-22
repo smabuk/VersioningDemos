@@ -1,0 +1,101 @@
+﻿@page
+@addTagHelper *, TagHelperLibrary
+@model VersioningDemos.Web.Pages.UsingTagHelpersModel
+@{
+    ViewData["Title"] = "Using TagHelpers";
+}
+
+<h2>Using TagHelpers</h2>
+
+<p>
+    When running with a Debug build pages are loaded into individual assemblies that change
+    every time you save the file (especially when using Browser Link).
+    When running with a Release build pages are loaded into a PrecompiledViews assembly.
+    These assmblies only have partial version information.
+</p>
+<p>
+    When using a TagHelper in an external library calling GetType() will return the external
+    assembly rather than the assmbly running the web site.
+</p>
+
+<h3>Using TagHelpers locally</h3>
+
+<p>Using old version of version TagHelper: <strong><oldversion></oldversion></strong></p>
+<p>Using updated version of version TagHelper: <strong><version /></strong></p>
+
+<h3>Using TagHelpers in an external library</h3>
+
+<p>Using old version of version TagHelper: <strong><lib-oldversion></lib-oldversion></strong></p>
+<p>Using updated version of version TagHelper and passing assembly class: <strong><lib-version assembly="typeof(Program)" /></strong></p>
+<p>Using updated version of version TagHelper and passing assembly class and <code>AssemblyVersion</code> type: <strong><lib-version assembly="typeof(Program)" type="AssemblyVersion" /></strong></p>
+
+<h3>Old version TagHelper</h3>
+<pre>
+<code>
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
+            output.TagName = "span";
+            output.Attributes.Add("class", "text-muted");
+            var versionInfo = GetType().Assembly.GetName().Version;
+            output.Content.Append(versionInfo.ToString());
+        }
+
+    </code>
+</pre>
+
+<h3>New version TagHelper</h3>
+<pre>
+<code>
+        public enum VersionType
+        {
+            FileVersion = 1,
+            ProductVersion = 2,
+            InformationalVersion = 2,
+            AssemblyVersion = 3
+        }
+
+        [HtmlAttributeName("assembly")]
+        public System.Type AssemblyType { get; set; }
+
+        [HtmlAttributeName("type")]
+        public VersionType Type { get; set; } = VersionType.ProductVersion;
+ 
+        public async override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            string versionString = "";
+            output.TagName = "span";
+            output.TagMode = TagMode.StartTagAndEndTag;
+            var childContent = await output.GetChildContentAsync();
+            output.Content.AppendHtml(childContent);
+            if (AssemblyType == null)
+            {
+                AssemblyType = GetType();
+            }
+            switch (Type)
+            {
+                case VersionType.FileVersion:
+                    versionString = AssemblyType
+                        .GetTypeInfo().Assembly
+                        .GetCustomAttribute<AssemblyFileVersionAttribute>()
+                        .Version;
+                    break;
+                case VersionType.ProductVersion:    // also covers VersionType.InformationalVersion
+                    versionString = AssemblyType
+                        .GetTypeInfo().Assembly
+                        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                        .InformationalVersion;
+                    break;
+                case VersionType.AssemblyVersion:
+                    versionString = AssemblyType
+                        .Assembly.GetName().Version.ToString();
+                    break;
+                default:
+                    break;
+            }
+            output.Content.Append(versionString);
+
+            await base.ProcessAsync(context, output);
+            return;
+        }
+    </code>
+</pre>

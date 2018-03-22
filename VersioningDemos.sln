@@ -18,21 +18,23 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Manual", "Manual\Manual.vbp
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Manual.AllDifferent", "Manual.AllDifferent\Manual.AllDifferent.vbproj", "{AB15F335-D422-4E6C-8247-CC70397B99E4}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionPrefix", "VersionPrefix\VersionPrefix.vbproj", "{186C015A-ED77-4F8A-A351-B7A901C64ADC}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VersionPrefix", "VersionPrefix\VersionPrefix.vbproj", "{186C015A-ED77-4F8A-A351-B7A901C64ADC}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionSuffix", "VersionSuffix\VersionSuffix.vbproj", "{011D147F-A09A-49F3-90E3-209C0BAFE431}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VersionSuffix", "VersionSuffix\VersionSuffix.vbproj", "{011D147F-A09A-49F3-90E3-209C0BAFE431}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SemanticVersioning", "SemanticVersioning\SemanticVersioning.vbproj", "{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SemanticVersioning", "SemanticVersioning\SemanticVersioning.vbproj", "{4B5726AC-9F4D-48F3-ADC7-06778E13BEDD}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildRevision", "BuildRevision\BuildRevision.vbproj", "{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "BuildRevision", "BuildRevision\BuildRevision.vbproj", "{1FBAFA4B-DECF-4803-9AD6-50BCA30E1AC1}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VSTS", "VSTS\VSTS.vbproj", "{AC898FAD-0955-4E5D-9A4E-451DA6E89047}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VSTS", "VSTS\VSTS.vbproj", "{AC898FAD-0955-4E5D-9A4E-451DA6E89047}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VSTS.WithGit", "VSTS.WithGit\VSTS.WithGit.vbproj", "{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VSTS.WithGit", "VSTS.WithGit\VSTS.WithGit.vbproj", "{B8372D7C-DCC9-4CB5-A303-5DCB14920F14}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildDateTime", "BuildDateTime\BuildDateTime.vbproj", "{07DE8D2C-A667-4178-9FB4-DD2CA943F311}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "BuildDateTime", "BuildDateTime\BuildDateTime.vbproj", "{07DE8D2C-A667-4178-9FB4-DD2CA943F311}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EnvironmentVariable", "EnvironmentVariable\EnvironmentVariable.vbproj", "{384AA2D6-AD39-4BB1-971E-199692CD576B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "EnvironmentVariable", "EnvironmentVariable\EnvironmentVariable.vbproj", "{384AA2D6-AD39-4BB1-971E-199692CD576B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelperLibrary", "TagHelperLibrary\TagHelperLibrary.csproj", "{02EB7A9A-51B3-4827-84E8-8D3FC0B5A320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +90,10 @@ Global
 		{384AA2D6-AD39-4BB1-971E-199692CD576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384AA2D6-AD39-4BB1-971E-199692CD576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384AA2D6-AD39-4BB1-971E-199692CD576B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02EB7A9A-51B3-4827-84E8-8D3FC0B5A320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02EB7A9A-51B3-4827-84E8-8D3FC0B5A320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02EB7A9A-51B3-4827-84E8-8D3FC0B5A320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02EB7A9A-51B3-4827-84E8-8D3FC0B5A320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
