@@ -17,21 +17,21 @@ some use cases and falls apart when placed into a library.
 All of these projects use the .csproj files rather than the previous techniques
 that used AssemblyInfo.cs or project.json
 
-1. Nothing set - [Default](Default\Default.vbproj)
-2. Setting a value - [Manual](Manual\Manual.vbproj)
+1. Nothing set - [Default](Default/Default.vbproj)
+2. Setting a value - [Manual](Manual/Manual.vbproj)
   - Using Visual Studio UI
   - Editing `<project>.csproj` 
-3. Setting all values - [Manual.AllDifferent](Manual.AllDifferent\Manual.AllDifferent.vbproj)
+3. Setting all values - [Manual.AllDifferent](Manual.AllDifferent/Manual.AllDifferent.vbproj)
   - Using Visual Studio UI
   - Editing `<project>.csproj` 
-4. Just use VersionPrefix - [VersionPrefix](VersionPrefix\VersionPrefix.vbproj)
-5. VersionSuffix
-6. BuildRevision
+4. Just use VersionPrefix - [VersionPrefix](VersionPrefix/VersionPrefix.vbproj)
+5. VersionSuffix - [VersionSuffix](VersionSuffix/VersionSuffix.vbproj)
+6. BuildRevision - [BuildRevision](BuildRevision/BuildRevision.vbproj)
   -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
   -  Uses calculations in the csproj file
-7. BuildDateTime
+7. BuildDateTime - [BuildDateTime](BuildDateTime/BuildDateTime.vbproj)
   - used x.YYYY.MDD.HHMM to create automated values
-8. VSTS
+8. Visual Studio Team Services build - [VSTS](VSTS/VSTS.vbproj)
   - Add configured BUILDNUMBER from VSTS to VersionSuffix
-9. VSTS.WithGit
+9.  Visual Studio Team Services build with Git branch - [VSTS.WithGit](VSTS.WithGit/VSTS.WithGit.vbproj)
   - Add Git branch to Version Suffix as well
