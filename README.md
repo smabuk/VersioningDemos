@@ -10,18 +10,21 @@ There are 3 versions generally referenced within a .NET Core assembly
     * You can read more at [semver.org](https://semver.org/)
 * Assembly Version - the version of the assembly
 
+The normal method you see for retrieving version information only works for
+some use cases and falls apart when placed into a library.
+
 ## Projects
 All of these projects use the .csproj files rather than the previous techniques
 that used AssemblyInfo.cs or project.json
 
-1. Default
-2. Manual (Version)
+1. Nothing set - [Default](Default\Default.vbproj)
+2. Setting a value - [Manual](Manual\Manual.vbproj)
   - Using Visual Studio UI
   - Editing `<project>.csproj` 
-3. Manual.AllDifferent
+3. Setting all values - [Manual.AllDifferent](Manual.AllDifferent\Manual.AllDifferent.vbproj)
   - Using Visual Studio UI
   - Editing `<project>.csproj` 
-4. VersionPrefix
+4. Just use VersionPrefix - [VersionPrefix](VersionPrefix\VersionPrefix.vbproj)
 5. VersionSuffix
 6. BuildRevision
   -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
