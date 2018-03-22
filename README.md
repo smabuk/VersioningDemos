@@ -1,5 +1,12 @@
 # Versioning Demos
-Examples of ways to version .NET Core projects both without and with CI/CD
+Examples of ways to version .NET Core projects both with and without CI/CD
+
+If you clone this site and run it locally in Debug and Release you will see different result.
+You can see a live version at https://versioningdemos.azurewebsites.net/ this has passed through my Git and VSTS to
+generate the version information.
+
+You will notice that Microsoft has different versioning strategies within their own .Net libraries, presumaby not
+from the same teams.
 
 There are 3 versions generally referenced within a .NET Core assembly
 * File Version - this is used to see which DLL is later.
@@ -13,8 +20,8 @@ There are 3 versions generally referenced within a .NET Core assembly
 The normal method you see for retrieving version information only works for
 some use cases and falls apart when placed into a library.
 
-## Projects
-All of these projects use the .csproj files rather than the previous techniques
+## Version Sample Projects
+All of these projects use the .vbproj (could also be .csproj)files rather than the previous techniques
 that used AssemblyInfo.cs or project.json
 
 1. Nothing set - [Default](Default/Default.vbproj)
@@ -35,3 +42,9 @@ that used AssemblyInfo.cs or project.json
   - Add configured BUILDNUMBER from VSTS to VersionSuffix
 9.  Visual Studio Team Services build with Git branch - [VSTS.WithGit](VSTS.WithGit/VSTS.WithGit.vbproj)
   - Add Git branch to Version Suffix as well
+
+## TagHelpers
+When using Taghelpers there are several Gotchas.
+- Pages end up in different assemblies than you umay expect
+- Running in Debug or Release may give different values and created assemblies
+- Putting a TagHelper in an external library changes the current running assembly
