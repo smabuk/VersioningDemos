@@ -41,7 +41,6 @@ namespace VersioningDemos.Web.Pages
                 CurrentDomain.
                 GetAssemblies()
                              orderby a.FullName
-                             //where (a.FullName.StartsWith("Web") || a.FullName.StartsWith("Application") || a.FullName.StartsWith("Infrastructure"))
                              select a;
 
             foreach (var item in assemblies)
