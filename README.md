@@ -29,30 +29,30 @@ that used AssemblyInfo.cs or project.json
 
 ### Setting a value - [Manual](Manual/Manual.vbproj)
  Using Visual Studio UI (Project Properties / Package)
-    - Even if you don't use this to set the information it will display the calculated values
-    - Be careful you don't accidentally override values calculated elsewhere
+  - Even if you don't use this to set the information it will display the calculated values
+  - Be careful you don't accidentally override values calculated elsewhere
   - Editing `<project>.csproj` 
 
 ### Setting all values - [Manual.AllDifferent](Manual.AllDifferent/Manual.AllDifferent.vbproj)
-    - Using Visual Studio UI
-    - Editing `<project>.csproj` 
+   - Using Visual Studio UI
+   - Editing `<project>.csproj` 
 
 ### Just use VersionPrefix - [VersionPrefix](VersionPrefix/VersionPrefix.vbproj)
 
 ### VersionSuffix - [VersionSuffix](VersionSuffix/VersionSuffix.vbproj)
 
 ### BuildRevision - [BuildRevision](BuildRevision/BuildRevision.vbproj)
-    -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
-    -  Uses calculations in the csproj file
+   *  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
+   *  Uses calculations in the csproj file
 
 ### BuildDateTime - [BuildDateTime](BuildDateTime/BuildDateTime.vbproj)
-    - used x.YYYY.MDD.HHMM to create automated values
+   - used x.YYYY.MDD.HHMM to create automated values
 
 ### Visual Studio Team Services build - [VSTS](VSTS/VSTS.vbproj)
-    - Add configured BUILDNUMBER from VSTS to VersionSuffix
+   - Add configured BUILDNUMBER from VSTS to VersionSuffix
 
 ###  Visual Studio Team Services build with Git branch - [VSTS.WithGit](VSTS.WithGit/VSTS.WithGit.vbproj)
-    - Add Git branch to Version Suffix as well
+   - Add Git branch to Version Suffix as well
 
 ## TagHelpers
 When using Taghelpers there are several Gotchas.
