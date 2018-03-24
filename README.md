@@ -25,7 +25,7 @@ All of these projects use the .vbproj (could also be .csproj)files rather than t
 that used AssemblyInfo.cs or project.json
 
 ### Nothing set - [Default](Default/Default.vbproj)
-    - Defaults to 1.0.0
+   - Defaults to 1.0.0
 
 ### Setting a value - [Manual](Manual/Manual.vbproj)
  Using Visual Studio UI (Project Properties / Package)
