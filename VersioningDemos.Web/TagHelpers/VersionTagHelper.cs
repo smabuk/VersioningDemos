@@ -50,14 +50,14 @@ namespace VersioningDemos.Web.TagHelpers
                 case VersionType.FileVersion:
                     versionString = AssemblyType
                         .GetTypeInfo().Assembly
-                        .GetCustomAttribute<AssemblyFileVersionAttribute>()
-                        .Version;
+                        .GetCustomAttribute<AssemblyFileVersionAttribute>()?
+                        .Version ?? "";
                     break;
                 case VersionType.ProductVersion:    // also covers VersionType.InformationalVersion
                     versionString = AssemblyType
                         .GetTypeInfo().Assembly
-                        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                        .InformationalVersion;
+                        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+                        .InformationalVersion ?? "";
                     break;
                 case VersionType.AssemblyVersion:
                     versionString = AssemblyType
