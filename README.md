@@ -1,8 +1,8 @@
 # Versioning Demos
-Examples of ways to version .NET Core projects both with and without CI/CD
+Examples of ways to version .NET Core projects both with and without Continuous Deployment (CD)
 
-If you clone this site and run it locally in Debug and Release you will see different result.
-You can see a live version at https://versioningdemos.azurewebsites.net/ this has passed through my Git and VSTS to
+If you clone this site and run it locally in Debug and Release modes you will see different results.
+You can visit a live version at https://versioningdemos.azurewebsites.net/ this has passed through my Git and VSTS to
 generate the version information.
 
 You will notice that Microsoft has different versioning strategies within their own .Net libraries, presumaby not
@@ -24,27 +24,38 @@ some use cases and falls apart when placed into a library.
 All of these projects use the .vbproj (could also be .csproj)files rather than the previous techniques
 that used AssemblyInfo.cs or project.json
 
-1. Nothing set - [Default](Default/Default.vbproj)
-2. Setting a value - [Manual](Manual/Manual.vbproj)
-  - Using Visual Studio UI
+### Nothing set - [Default](Default/Default.vbproj)
+    - Defaults to 1.0.0
+
+### Setting a value - [Manual](Manual/Manual.vbproj)
+ Using Visual Studio UI (Project Properties / Package)
+    - Even if you don't use this to set the information it will display the calculated values
+    - Be careful you don't accidentally override values calculated elsewhere
   - Editing `<project>.csproj` 
-3. Setting all values - [Manual.AllDifferent](Manual.AllDifferent/Manual.AllDifferent.vbproj)
-  - Using Visual Studio UI
-  - Editing `<project>.csproj` 
-4. Just use VersionPrefix - [VersionPrefix](VersionPrefix/VersionPrefix.vbproj)
-5. VersionSuffix - [VersionSuffix](VersionSuffix/VersionSuffix.vbproj)
-6. BuildRevision - [BuildRevision](BuildRevision/BuildRevision.vbproj)
-  -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
-  -  Uses calculations in the csproj file
-7. BuildDateTime - [BuildDateTime](BuildDateTime/BuildDateTime.vbproj)
-  - used x.YYYY.MDD.HHMM to create automated values
-8. Visual Studio Team Services build - [VSTS](VSTS/VSTS.vbproj)
-  - Add configured BUILDNUMBER from VSTS to VersionSuffix
-9.  Visual Studio Team Services build with Git branch - [VSTS.WithGit](VSTS.WithGit/VSTS.WithGit.vbproj)
-  - Add Git branch to Version Suffix as well
+
+### Setting all values - [Manual.AllDifferent](Manual.AllDifferent/Manual.AllDifferent.vbproj)
+    - Using Visual Studio UI
+    - Editing `<project>.csproj` 
+
+### Just use VersionPrefix - [VersionPrefix](VersionPrefix/VersionPrefix.vbproj)
+
+### VersionSuffix - [VersionSuffix](VersionSuffix/VersionSuffix.vbproj)
+
+### BuildRevision - [BuildRevision](BuildRevision/BuildRevision.vbproj)
+    -  replicate build and revision wildcards by implementing [roslyn's version pattern logic](https://github.com/dotnet/roslyn/blob/614299ff83da9959fa07131c6d0ffbc58873b6ae/src/Compilers/Core/Portable/VersionHelper.cs#L187-L202) 
+    -  Uses calculations in the csproj file
+
+### BuildDateTime - [BuildDateTime](BuildDateTime/BuildDateTime.vbproj)
+    - used x.YYYY.MDD.HHMM to create automated values
+
+### Visual Studio Team Services build - [VSTS](VSTS/VSTS.vbproj)
+    - Add configured BUILDNUMBER from VSTS to VersionSuffix
+
+###  Visual Studio Team Services build with Git branch - [VSTS.WithGit](VSTS.WithGit/VSTS.WithGit.vbproj)
+    - Add Git branch to Version Suffix as well
 
 ## TagHelpers
 When using Taghelpers there are several Gotchas.
-- Pages end up in different assemblies than you umay expect
-- Running in Debug or Release may give different values and created assemblies
-- Putting a TagHelper in an external library changes the current running assembly
+  - Pages end up being placed into different assemblies than you may expect
+  - Running in Debug or Release may give different values and created assemblies
+  - Putting a TagHelper in an external library changes the result of the current running assembly
